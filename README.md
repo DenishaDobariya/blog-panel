@@ -35,8 +35,6 @@ node_modules :  To avoid uploading large and unnecessary files to the repository
 
 .env :  To protect sensitive information like API keys and database credentials.
 
-# Live Priview
-Open your browser and go to : http://localhost:3003
  
 # 🛠️ Technologies:
 
@@ -64,4 +62,8 @@ Express-session :  for session handling and cookies
 
 
 
+
+
+
+https://github.com/user-attachments/assets/3a7559c8-41d0-426e-8f6d-617cbe08ab04
 
