@@ -6,11 +6,11 @@ The Blog Post Panel project is a user-friendly platform that allows users to reg
 # How to Download and Run the Project
 1. Clone the Repository :
    ```bash
-   git clone https://github.com/DenishaDobariya/Blog_Panel.git
+   git clone https://github.com/DenishaDobariya/blog-panel.git
 
 3. Navigate to the Project Directory :
    ```bash
-   cd Blog_Panel
+   cd blog-panel
 
 5. Install Dependencies: After cloning the project, install the necessary dependencies using npm :
    ```bash
@@ -56,7 +56,7 @@ File Uploads:
 Multer : for handling file uploads (images)
 Session Management:
 
-https://github.com/user-attachments/assets/47ef1f7d-b6a1-4e9f-bb48-6b601f2d9e2e
+
 
 
 
