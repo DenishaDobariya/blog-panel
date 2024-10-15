@@ -42,8 +42,8 @@
         <h1 class="text-center">SubTopics</h1>
 
         <!-- Add SubTopic Form -->
-        <form action="/add-subtopic" method="POST" class="mb-4">
-            <div class="input-group mb-3">
+        <div class="row justify-content-center">
+        <form action="/add-subtopic" method="POST" class="mb-4 col-md-6">
                 <div class="mb-3">
                     <input type="text" class="form-control" name="name" placeholder="Enter subtopic" required />
                 </div>
@@ -58,8 +58,8 @@
                 <div class="mb-3">
                     <button class="btn btn-primary" type="submit">Add SubTopic</button>
                 </div>
-            </div>
         </form>
+        </div>
 
         <!-- SubTopics Table -->
         <div class="table-responsive">
@@ -77,10 +77,11 @@
                             <td><%= subTopic.name %></td>
                             <td><%= subTopic.topic.name %></td>
                             <td>
-                                <% if (subTopic.createdBy._id.toString() === user._id.toString()) { %>
+                                <% if (subTopic.createdBy && subTopic.createdBy._id.toString() === user._id.toString()) { %>
                                     <a href="/deleteSubTopic/<%= subTopic._id %>" class="btn btn-danger btn-sm">Delete</a>
                                 <% } %>
                             </td>
+
                         </tr>
                     <% }) %>
                 </tbody>

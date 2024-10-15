@@ -2,8 +2,7 @@ const Topic = require('../models/Topic');
 
 const renderAddTopic = async (req, res) => {
     try {
-        const topics = await Topic.find().populate('createdBy');
-        res.render('topic', { topics, user: req.user });
+        res.render('topic',{  user: req.user });
     } catch (err) {
         res.status(500).send('Error retrieving topics');
     }
@@ -18,8 +17,7 @@ const addTopic = async (req, res) => {
         }
 
         const topic = new Topic({
-            name: req.body.name,
-            createdBy: req.user._id 
+            name: req.body.name
         });
 
         console.log("topic...", topic);
@@ -33,24 +31,4 @@ const addTopic = async (req, res) => {
 };
 
 
-const deleteTopic = async (req, res) => {
-    try {
-        const topic = await Topic.findById(req.params.id);
-        if (!topic) {
-            return res.status(404).send('Topic not found');
-        }
-        
-        if (topic.createdBy.equals(req.user._id)) {
-            await Topic.deleteOne({ _id: req.params.id });
-            res.redirect('/topics');
-        } else {
-            res.status(403).send('You are not authorized to delete this topic');
-        }
-    } catch (err) {
-        console.error(err); 
-        res.status(500).send('Error deleting topic');
-    }
-};
-
-
-module.exports = { renderAddTopic, addTopic, deleteTopic };
+module.exports = { renderAddTopic, addTopic };

@@ -42,13 +42,13 @@ router.get('/delete/:id', isAuth, blogController.deleteBlog);
 // Topic routes
 router.get('/topics', isAuth, topicController.renderAddTopic);
 router.post('/add-topic', isAuth, topicController.addTopic);
-router.get('/deleteTopic/:id', isAuth, topicController.deleteTopic);
 
 // SubTopic routes
 router.get('/subtopics', isAuth, subTopicController.getAllSubTopics);
 router.post('/add-subtopic', isAuth, subTopicController.addSubTopic);
+router.get('/deleteSubTopic/:id', isAuth, subTopicController.deleteSubTopic)
 
 // Comment routes
-router.post('/blogs/:blogId/add-comment', isAuth, commentController.addComment)
+router.post('/blogs/:blogId/add-comment', isAuth, commentController.addComment);
 
 module.exports = router;
